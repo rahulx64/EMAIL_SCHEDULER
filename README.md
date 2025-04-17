@@ -42,25 +42,4 @@ Storage	JSON File
 
 
 
-          [Client / Postman]
-                  |
-         (POST /schedule)
-                  |
-          [Express.js Server]
-                  |
-         +------------------+
-         | Schedule Email   |
-         | - Validate input |
-         | - Save to file   |
-         | - Push to queue  |
-         +------------------+
-                  |
-           [BullMQ Job Queue]
-                  |
-          [Redis (as Queue DB)]
-                  |
-         [Background Worker]
-                  |
-      Sends Email (via nodemailer)
-                  |
-         Updates JSON File Status
+        
