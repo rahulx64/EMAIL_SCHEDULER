@@ -1,0 +1,12 @@
+{ 
+  "db7da94e-f3f7-44c3-a2c4-cbf2decae3f2": {
+    "id": "db7da94e-f3f7-44c3-a2c4-cbf2decae3f2",
+    "status": "delivered",
+    "attempts": 1,
+    "last_attempt_at": "2025-04-17T10:30:03.378Z",
+    "to": "lci2021040@iiitl.ac.in",
+    "subject": "Email Subject",
+    "body": "Hello, this is a scheduled email by Rahul's email scheduler, hope this works.",
+    "send_at": "2025-04-17T10:30:00Z"
+  }
+}
