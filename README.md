@@ -1,45 +1,75 @@
-here is working mechanism of email scheduling  backend made using 
-BULLMQ ,EXPRESS,NODEMAILER 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/taskforcesh/bullmq/main/docs/logo.svg" alt="BullMQ" width="100"/>
+  <img src="https://nodei.co/npm/express.png" alt="Express" width="100"/>
+  <img src="https://cdn.worldvectorlogo.com/logos/nodemailer.svg" alt="Nodemailer" width="100"/>
+  <img src="https://cdn.worldvectorlogo.com/logos/redis.svg" alt="Redis" width="100"/>
+  <img src="https://i.ibb.co/mvYPBKz/docker-logo.png" alt="Docker" width="100"/>
+</p>
 
-BULLMQ  -->BullMQ uses Redis as a backend for job queues, uses TCP protcols which persistent and fast  underhood to communicate with redis inmemory data store to form  a sorted set data structure it has a email queue where event are stored in sorted format according to time and worker queue process email queue to send email on time 
+# 📧 Email Scheduling Backend
 
-NODEMAILER --> nodemailer uses SMTP protcol for email sending service 
+An email scheduling backend system built using **BullMQ**, **Express**, **Nodemailer**, and **Redis**, designed to schedule and send emails reliably with retry support.
 
-POSTMAN -->for REST API TESTING 
+---
 
-DATABASE --> FOR data storage  i uses json file for storage of email data 
+## ⚙️ Working Mechanism
 
-producer_queue-->add job to redis queue then worker process it 
+### 🔄 BullMQ (Queue System)
+- Uses **Redis** as a backend for job queues.
+- Communicates via **TCP protocols**, providing fast and persistent messaging.
+- Jobs are stored in a **Sorted Set** based on their scheduled execution time.
+- A **Producer Queue** adds jobs to Redis.
+- A **Worker Queue** monitors the queue and processes jobs at the right time.
 
+### 📬 Nodemailer (Email Sender)
+- Uses the **SMTP protocol** to send emails.
+- Sends scheduled emails processed by the worker.
 
-WORKERQUEUE-->When time comes, Redis notifies the Worker.  worker queue process email queue for sending email atleast 3 attempt in this case  
-Worker executes the job, and updates status:
+### 🧪 Postman (API Testing)
+- Used for testing REST API endpoints of the backend.
 
-completed, failed, retrying
+### 💾 Data Storage
+- Email job details are stored locally using a **JSON file**.
 
+### 🧵 Worker Queue
+- Listens for jobs when their scheduled time arrives.
+- Retries sending emails up to **3 times** if a failure occurs.
+- Job statuses: `completed`, `failed`, `retrying`.
 
+### 🐳 Docker (Redis Hosting)
+- Redis is hosted inside a **Docker container** for isolated and scalable usage.
 
+### 🧠 ioredis
+- Advanced Redis client for Node.js.
+- Supports features like pub/sub, cluster, and pipelines.
 
-DOCKER --> which is hosting our redis inmemory cache  in this project 
+### 📊 Sorted Set in Redis
+- Redis structure where jobs are sorted based on execution time.
+- Enables efficient retrieval of scheduled jobs.
 
-ioredis --> ioredis is a powerful Node.js client for Redis. It lets our Node.js app connect to Redis, read/write data, and use advanced features like pub/sub
+---
 
+## 🧱 Project Stack
 
-sortedset -->  it is type of data structure in redis where unique element are sorted in order either time or either 
+| Component         | Technology     |
+|------------------|----------------|
+| API Framework     | Express.js     |
+| Queue System      | BullMQ         |
+| Queue Backend     | Redis          |
+| Email Sender      | Nodemailer     |
+| Storage           | JSON File      |
 
+---
 
+## 📦 Dependencies
 
-Component    	Tech 
-----------------------------
-API Framework	Express.js
-Queue System	BullMQ
-Queue Backend	Redis
-Email Simulation	Nodemailer
-Storage	JSON File
-
-
-
-
-
-
-        
+```json
+"dependencies": {
+  "bullmq": "^5.49.0",
+  "dotenv": "^16.5.0",
+  "express": "^5.1.0",
+  "fs-extra": "^11.3.0",
+  "ioredis": "^5.6.1",
+  "nodemailer": "^6.10.1",
+  "uuid": "^11.1.0"
+}
