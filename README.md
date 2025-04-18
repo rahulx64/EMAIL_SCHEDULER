@@ -1,3 +1,12 @@
+<p align="center">
+  <img src="https://img.shields.io/badge/BullMQ-5.49.0-red?logo=redis&style=for-the-badge" />
+  <img src="https://img.shields.io/badge/dotenv-16.5.0-8DD6F9?logo=dotenv&style=for-the-badge" />
+  <img src="https://img.shields.io/badge/express-5.1.0-black?logo=express&style=for-the-badge" />
+  <img src="https://img.shields.io/badge/fs--extra-11.3.0-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/ioredis-5.6.1-DD0031?logo=redis&style=for-the-badge" />
+  <img src="https://img.shields.io/badge/nodemailer-6.10.1-yellow?logo=maildotru&style=for-the-badge" />
+  <img src="https://img.shields.io/badge/uuid-11.1.0-purple?style=for-the-badge" />
+</p>
 
 #  Email Scheduling Backend
 
