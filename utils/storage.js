@@ -1,4 +1,6 @@
 import fs from "fs-extra";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const FILE_PATH = "./storage/emails.json";
 
