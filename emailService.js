@@ -1,5 +1,7 @@
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
+import fs from "fs-extra";
+import path from "path";
 
 dotenv.config();
 
